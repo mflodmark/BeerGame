@@ -13,6 +13,8 @@ $("#start-img").click(function() {
     $(".jumbotron").slideUp(500);
     
     $("#play-info").slideDown(500);
+
+    ShuffleArray(newGame.allCards);
 });
 
 $("#end-img").click(function() {
@@ -29,6 +31,7 @@ $("#end-img").click(function() {
         for (let index = 0; index < newGame.games.length + 1; index++) {
             if (arr[index].selected == true) {
                 newGame.updateCard(element.name, newGame.games[index-1])
+                break;
             }
         } 
     });   
@@ -47,6 +50,7 @@ function BlackEnd() {
             newGame.updateCard("Three", newGame.games[index-1], "Black")
             newGame.updateCard("Four", newGame.games[index-1], "Black")
             newGame.updateCard("Five", newGame.games[index-1], "Black") 
+            break;
         }
     } 
 }
@@ -61,16 +65,27 @@ function RedEnd() {
             newGame.updateCard("Three", newGame.games[index-1], "Red")
             newGame.updateCard("Four", newGame.games[index-1], "Red")
             newGame.updateCard("Five", newGame.games[index-1], "Red")
+            break;
         }
     } 
 }
 
 function GetRandomCard() {
-    var number = Math.floor(Math.random() * newGame.allCards.length); 
+    // var number = Math.floor(Math.random() * newGame.allCards.length); 
 
+    var number = 0;
     newGame.currentCard = newGame.allCards[number];
 
     newGame.allCards.splice(number, 1);
+}
+
+function ShuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
 
 $("#play-img").click(function(){
@@ -80,7 +95,9 @@ $("#play-img").click(function(){
  
     img.src = newGame.currentCard.image;
 
+    $("#play-name").fadeOut(100);           
     document.getElementById("play-name").innerHTML = newGame.currentCard.action.name;
+    $("#play-name").fadeIn(100);               
 
     var play = document.getElementById("play-div");
 
@@ -146,6 +163,7 @@ function Cards() {
         for (let index = 0; index < newGame.games.length + 1; index++) {
             if (arr[index].innerHTML == element.action.name) {
                 arr[index].selected = true;
+                break;
             }
         } 
     });
@@ -161,6 +179,7 @@ function Black() {
     for (let index = 0; index < newGame.games.length + 1; index++) {
         if (arr[index].innerHTML == drink.name) {
             arr[index].selected = true;
+            break;
         }
     }  
 }
