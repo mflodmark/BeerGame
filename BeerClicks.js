@@ -92,7 +92,6 @@ $("#play-img").click(function(){
     GetRandomCard();
 
     var img = document.getElementById("play-img");
- 
     img.src = newGame.currentCard.image;
 
     $("#play-name").fadeOut(100);           
@@ -101,8 +100,8 @@ $("#play-img").click(function(){
 
     var play = document.getElementById("play-div");
 
-    play.children[1].innerHTML = newGame.currentCard.action.info;
-    play.children[2].innerHTML = newGame.allCards.length + " kort kvar.";
+    play.children[3].innerHTML = newGame.currentCard.action.info;
+    play.children[4].innerHTML = newGame.allCards.length + " kort kvar.";
 
     if (newGame.allCards.length == 1) {
         $("#play-img-side").fadeOut(300);       
