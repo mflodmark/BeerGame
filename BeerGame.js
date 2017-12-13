@@ -62,7 +62,7 @@ var sevenGame = new Game("Sjuan",
 "Den som missar")
 
 // preloadImages(["./Kortlek/3.png"]);
-var cAce = checkCookie("ace","./Kortlek/3.png",365);
+//var cAce = checkCookie("ace","./Kortlek/3.png",365);
 setCookie("name","Markus",1000);
 var markus = getCookie("name");
 
@@ -70,7 +70,7 @@ var markus = getCookie("name");
 
 window.alert(markus);
 
-var ace = new Card("Ace",cAce, "Red");
+var ace = new Card("Ace","./Kortlek/3.png", "Red");
 var ace2 = new Card("Ace","./Kortlek/1.png", "Black");
 var ace3 = new Card("Ace","./Kortlek/2.png", "Black");
 var ace4 = new Card("Ace","./Kortlek/4.png", "Red");
