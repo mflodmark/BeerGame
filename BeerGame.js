@@ -62,7 +62,7 @@ var sevenGame = new Game("Sjuan",
 "Den som missar")
 
 // preloadImages(["./Kortlek/3.png"]);
-//var cAce = checkCookie("ace","./Kortlek/3.png",365);
+// var cAce = checkCookie("ace","./Kortlek/3.png",365);
 setCookie("name","Markus",1000);
 var markus = getCookie("name");
 
