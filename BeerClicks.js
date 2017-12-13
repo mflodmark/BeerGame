@@ -70,26 +70,8 @@ function RedEnd() {
     } 
 }
 
-function GetRandomCard() {
-    // var number = Math.floor(Math.random() * newGame.allCards.length); 
-
-    var number = 0;
-    newGame.currentCard = newGame.allCards[number];
-
-    newGame.allCards.splice(number, 1);
-}
-
-function ShuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-}
-
 $("#play-img").click(function(){
-    GetRandomCard();
+    newGame.GetRandomCard();
 
     var img = document.getElementById("play-img");
     img.src = newGame.currentCard.image;
@@ -193,6 +175,7 @@ function Red() {
     for (let index = 0; index < newGame.games.length + 1; index++) {
         if (arr[index].innerHTML == giveAway.name) {
             arr[index].selected = true;
+            break;
         }
     } 
     

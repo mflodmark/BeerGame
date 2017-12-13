@@ -1,6 +1,15 @@
 $("#play").hide();
 $("#play-info").hide();
 
+function ShuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
 newGame.cards.forEach(element => {
     var newDiv = document.createElement("div");
     newDiv.id = element.name + "-div-input";
