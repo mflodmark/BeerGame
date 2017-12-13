@@ -61,7 +61,16 @@ var sevenGame = new Game("Sjuan",
 "Börja med siffran 1. Klockvis fortsätter med 2. Om 7 ingår i siffran eller i 7:ans tabell så ska man säga biip istället och det byter håll",
 "Den som missar")
 
-var ace = new Card("Ace","./Kortlek/3.png", "Red");
+preloadImages(["./Kortlek/3.png"]);
+var cAce = checkCookie("ace","./Kortlek/3.png",365);
+setCookie("name","Markus",1000);
+var markus = getCookie("name");
+
+// var markus = checkCookie("name","Markus",365);
+
+window.alert(markus);
+
+var ace = new Card("Ace",cAce, "Red");
 var ace2 = new Card("Ace","./Kortlek/1.png", "Black");
 var ace3 = new Card("Ace","./Kortlek/2.png", "Black");
 var ace4 = new Card("Ace","./Kortlek/4.png", "Red");
